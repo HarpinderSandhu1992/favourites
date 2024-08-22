@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Songs </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-title size="large">User's favourite Songs</ion-title>
+    </ion-toolbar> </ion-header
+  ><ion-list>
+    <ion-reorder-group
+      [disabled]="isDisabled"
+      (ionItemReorder)="handleReorder($any($event))"
+    >
+      <ion-item *ngFor="let song of songs">
+        <ion-label> {{song.title}} </ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+      <ion-button (click)="toggleReorder()"> Toggle Reorder </ion-button>
+    </ion-reorder-group>
+  </ion-list>
 </ion-content>
