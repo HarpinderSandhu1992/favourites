@@ -1,0 +1,7 @@
+{
+  "name": "favourites",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
